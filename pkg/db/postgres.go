@@ -13,6 +13,7 @@ var DB *pgxpool.Pool
 
 func InitPostgres() error {
 	dsn := os.Getenv("DATABASE_URL")
+	println("Connecting to PostgreSQL with DSN:", dsn)
 	if dsn == "" {
 		return fmt.Errorf("DATABASE_URL environment variable is not set")
 	}
